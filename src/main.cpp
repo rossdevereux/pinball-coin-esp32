@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <WiFi.h>
 #include <WebServer.h>
+#include <ESPmDNS.h>
 
 // ----------------------------------------------------------------------
 // CONFIGURATION
@@ -104,6 +105,14 @@ void setup() {
   Serial.println("WiFi connected.");
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
+
+  // Setup mDNS
+  if (MDNS.begin("pinball")) {
+    Serial.println("MDNS responder started");
+    Serial.println("Access via http://pinball.local");
+  } else {
+    Serial.println("Error setting up MDNS responder!");
+  }
 
   // Setup Server
   server.on("/", handleRoot);

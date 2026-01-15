@@ -34,7 +34,7 @@ Connect the Relay's **COM** (Common) and **NO** (Normally Open) terminals in par
 ## Usage
 
 1.  Open the Serial Monitor (115200 baud) to find the ESP32's **IP Address**.
-2.  Open a web browser and navigate to `http://<ESP32_IP>/`.
+2.  Open a web browser and navigate to `http://<ESP32_IP>/` OR `http://pinball.local`.
 3.  Click the **INSERT COIN** button.
 
 ### API
@@ -47,7 +47,7 @@ GET /coin
 
 Example using curl:
 ```bash
-curl http://192.168.1.100/coin
+curl http://pinball.local/coin
 ```
 
 ## Safety Warning
